@@ -1,0 +1,24 @@
+<employee>
+   <employeeinfo>
+    <name>
+       <name>first name</name>
+       <name>middle name</name>
+       <name>last name</name>
+    </name>
+   <contactinfo>
+    <companyinfo>company info</companyinfo>
+       <contactinfo>email address</contactinfo>
+       <contactinfo>phone num</contactinfo>
+    </contactinfo>
+   </employeeinfo>
+    <companyinfo>
+       <companyinfo>company name</companyinfo>
+       <companyinfo>company location</companyinfo>
+       <companyinfo>designation</companyinfo>
+    </companyinfo>
+    <companylocation>
+       <companylocation>street</companylocation>
+       <companylocation>city</companylocation>
+       <companylocation>phone</companylocation>
+     </companylocation>     
+</employee>

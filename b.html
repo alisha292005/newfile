@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        h1 {
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #f5b342;
+            animation: fadeIn 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Table styling */
+        table {
+            margin: 20px auto;
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        table:hover {
+            transform: scale(1.05);
+        }
+
+        /* Background animation for table */
+        @keyframes backgroundAnimation {
+            0% {
+                background-color: #e6f7ff;
+            }
+            50% {
+                background-color: #d0f0c0;
+            }
+            100% {
+                background-color: #f0f9e8;
+            }
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            color: #495057;
+            background-color: #e6f7ff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        th {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            color: #495057;
+            background-color: #e6f7ff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #d0f0c0;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #f0f9e8;
+        }
+
+        tr:hover td {
+            background-color: #d3f8e3;
+            color: #212529;
+        }
+
+        button {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .input-group {
+            margin: 20px;
+            width: 90%;
+        }
+
+        .input-group .form-control {
+            border-radius: 10px;
+        }
+
+        .row {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            .input-group {
+                width: 100%;
+            }
+
+            th, td {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .input-group .form-control {
+                margin-bottom: 10px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <u>
+            <h1><b>Country Data</b></h1>
+        </u>
+    </center>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="Enter Country" aria-label="Country"
+            aria-describedby="addon-wrapping" id="countrydata">
+        <button id="clicks" type="button" class="btn btn-danger">Get Data</button>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>name</td>
+                        <td id="a"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>official</td>
+                        <td id="b"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>capital</td>
+                        <td id="c"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>region</td>
+                        <td id="d"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>subregion</td>
+                        <td id="e"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>languages</td>
+                        <td id="f"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>languages</td>
+                        <td id="g"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>translations</td>
+                        <td id="h"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>translations</td>
+                        <td id="i"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>borders</td>
+                        <td id="j"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>altSpellings</td>
+                        <td id="k"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>nativeName</td>
+                        <td id="l"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>nativeName</td>
+                        <td id="m"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>nativeName</td>
+                        <td id="n"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">15</th>
+                        <td>nativeName</td>
+                        <td id="o"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16</th>
+                        <td>currencies</td>
+                        <td id="p"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">17</th>
+                        <td>currencies</td>
+                        <td id="q"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">18</th>
+                        <td>flags</td>
+                        <td><img id="r" style="max-width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">19</th>
+                        <td>postalCode</td>
+                        <td id="s"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">20</th>
+                        <td>population</td>
+                        <td id="t"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('clicks').addEventListener('click', function () {
+            var country = document.getElementById("countrydata").value;
+            if (country == "") {
+                alert("Please enter a country name.");
+                return;
+            }
+            fetch("https://restcountries.com/v3.1/name/" + country)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("a").innerHTML = data[0].name.common;
+                    document.getElementById("b").innerHTML = data[0].name.official;
+                    document.getElementById("c").innerHTML = data[0].capital;
+                    document.getElementById("d").innerHTML = data[0].region;
+                    document.getElementById("e").innerHTML = data[0].subregion;
+                    document.getElementById("f").innerHTML = data[0].languages.eng;
+                    document.getElementById("g").innerHTML = data[0].languages.urd;
+                    document.getElementById("h").innerHTML = data[0].translations.ara.official;
+                    document.getElementById("i").innerHTML = data[0].translations.ara.common;
+                    document.getElementById("j").innerHTML = data[0].borders;
+                    document.getElementById("k").innerHTML = data[0].altSpellings;
+                    document.getElementById("l").innerHTML = data[0].nativeName.eng.official;
+                    document.getElementById("m").innerHTML = data[0].nativeName.eng.common;
+                    document.getElementById("n").innerHTML = data[0].nativeName.urd.official;
+                    document.getElementById("o").innerHTML = data[0].nativeName.urd.common;
+                    document.getElementById("p").innerHTML = data[0].currencies.PKR.name;
+                    document.getElementById("q").innerHTML = data[0].currencies.PKR.symbol;
+                    document.getElementById("r").src = data[0].flags.svg;
+                    document.getElementById("s").innerHTML = data[0].postalCode;
+                    document.getElementById("t").innerHTML = data[0].population;
+                })
+                .catch(err => alert("Country not found!"));
+        });
+    </script>
+</body>
+
+</html>

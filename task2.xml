@@ -1,0 +1,43 @@
+<fortrando>
+    <assignOp>
+        <varRefExpi></varRefExpi>
+        <intVal1></intVal1>
+    </assignOp>
+
+    <basicblock>
+    <fortrando>
+
+        <assignOp>
+            <VarRefExpj></VarRefExpj>
+            <VarRefExpi></VarRefExpi>
+        </assignOp>
+
+        <varRefExpN></varRefExpN>
+        <NullExpresssion></NullExpresssion>
+        <basicblock>
+            <ExprStatement>
+                <assignOp>
+
+                    <pntrArrRefExp>
+                        <varRefExpA></varRefExpA>
+
+                        <ExprListExp>
+                            <VarRefExpi></VarRefExpi>
+                            <VarRefExpj></VarRefExpj>
+                        </ExprListExp>
+
+                    </pntrArrRefExp>
+
+                    <AddOp>
+                        <VarRefExpi> </VarRefExpi>
+                        <VarRefExpj></VarRefExpj>
+                    </AddOp>
+
+                </assignOp>
+            </ExprStatement>
+        </basicblock>
+    </fortrando>
+    </basicblock>
+<varRefExpM></varRefExpM>
+<NullExpresssion></NullExpresssion>
+</fortrando>
